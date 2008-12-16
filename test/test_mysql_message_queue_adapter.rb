@@ -11,7 +11,6 @@ class MysqlMessageQueueTest < Test::Unit::TestCase
     :database => "skynet_test"
   )
   ActiveRecord::Base.connection.execute("delete from skynet_message_queues")
-  ActiveRecord::Base.connection.execute("delete from skynet_worker_queues")
   
   def setup
     Skynet.configure(
@@ -32,7 +31,6 @@ class MysqlMessageQueueTest < Test::Unit::TestCase
       :database => "skynet_test"
     )
     ActiveRecord::Base.connection.execute("delete from skynet_message_queues")
-    ActiveRecord::Base.connection.execute("delete from skynet_worker_queues")
     
     @message_options = {
       :tasktype     => "task", 
