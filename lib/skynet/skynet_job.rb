@@ -102,12 +102,12 @@ class Skynet
       :queue_id              => 0,
       :mappers               => 2,
       :reducers              => 1,               
-      :map_timeout           => 60,
-      :reduce_timeout        => 60,
-      :master_timeout        => 60,
-      :result_timeout        => 1200,
+      :map_timeout           => Skynet::Config[:WORKER_DEFAULT_TIMEOUT],
+      :reduce_timeout        => Skynet::Config[:WORKER_DEFAULT_TIMEOUT],
+      :master_timeout        => Skynet::Config[:WORKER_DEFAULT_TIMEOUT],
+      :result_timeout        => Skynet::Config[:WORKER_DEFAULT_TIMEOUT],
       :start_after           => 0,
-      :master_result_timeout => 1200,
+      :master_result_timeout => Skynet::Config[:WORKER_DEFAULT_TIMEOUT],
       :local_master          => true
     }
             

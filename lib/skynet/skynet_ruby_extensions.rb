@@ -12,10 +12,10 @@ module Enumerable
       :name                   => "#{klass} Enumerable MASTER",
       :map_name               => "#{klass} Enumerable MAP",
       :reduce_name            => "#{klass} Enumerable REDUCE",
-      :map_timeout            => 3600,
-      :reduce_timeout         => 3600,
-      :master_timeout         => 3600,
-      :master_result_timeout  => 3600
+      :map_timeout            => Skynet::Config[:WORKER_DEFAULT_TIMEOUT],
+      :reduce_timeout         => Skynet::Config[:WORKER_DEFAULT_TIMEOUT],
+      :master_timeout         => Skynet::Config[:WORKER_DEFAULT_TIMEOUT],
+      :master_result_timeout  => Skynet::Config[:WORKER_DEFAULT_TIMEOUT]
     }                                
 
     jobopts[:map_reduce_class] = klass.to_s if klass
